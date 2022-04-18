@@ -53,67 +53,128 @@ Race_PANAM()
 	Loop {
 		; Turn 1
 		; Tooltip
-		CheckTurn(turn1.startX, turn1.startY)
-		ToolTipper("Turn 1 start found")
-		/*
-		if( A_Index != 1){
-			Nitrous_Off()
-			Accel_On(75)
-
+		
+		turn_one_end_found := false
+		if (CheckTurn(turn1.startX, turn1.startY))
+		{
+			turn_one_end_found := true
+			ToolTipper("Turn 1 start found")
 		}
-		*/
+			/*
+			if( A_Index != 1){
+				Nitrous_Off()
+				Accel_On(75)
+
+			}
+			*/
 
 		controller.Axes.LX.SetState(18-3*%A_Index%)
 		;Sleep(500)
 		Accel_On(100)
-		CheckTurn(turn1.endX, turn1.endY)
-		ToolTipper("Turn 1 end found")
+	
+		
+		turn_one_end_found := false
+		turn_one_end_found := true ; debug TODO check if wheels are curved
+		if (CheckTurn(turn1.endX, turn1.endY))
+		{
+			turn_one_end_found := true
+			ToolTipper("Turn 1 end found")
 
-		Nitrous_On()
-		controller.Axes.LX.SetState(75)
-		sleep(2000)
-		controller.Axes.LX.SetState(65)
-		sleep(2500)
-		controller.Axes.LX.SetState(62)
-		sleep(2000)
-
+			Nitrous_On()
+			controller.Axes.LX.SetState(75)
+		}
+			sleep(2000)
+		if (turn_one_end_found)
+		{
+			controller.Axes.LX.SetState(65)
+		}
+			sleep(2500)
+		if (turn_one_end_found)
+		{
+			controller.Axes.LX.SetState(62)
+		}
+			sleep(2000)
+		
+		turn_two_start_found := false
 		; Turn 2
 		if( A_Index = 1 || A_Index = 6){
-			CheckTurn(turn2.startX, turn2.startY)
+			if (CheckTurn(turn2.startX, turn2.startY, 5000))
+			{
+				turn_two_start_found := true
+			}
 		}
 		else{
-			CheckTurn(545, turn2.startY)
+			if (CheckTurn(545, turn2.startY)) {
+				turn_two_start_found := true
+			}
 		}
-		ToolTipper("Turn 2 start found")
-		controller.Axes.LX.SetState(18.3)
-		CheckTurn(turn2.endX, turn2.endY)
-		ToolTipper("Turn 2 end found")
-		controller.Axes.LX.SetState(50)
-		if( A_Index = 1 || A_Index = 6){
-			controller.Axes.LX.SetState(75)
-		sleep(2000)
+		if (turn_two_start_found)
+		{
+			ToolTipper("Turn 2 start found")
+			controller.Axes.LX.SetState(18.3)
+		}
 
-			controller.Axes.LX.SetState(65)
-		sleep(500)
+		turn_two_end_found := false
+		turn_two_end_found := true ; debug TODO check if wheels are curved
+		if (CheckTurn(turn2.endX, turn2.endY))
+		{
+			turn_two_end_found := true
+			ToolTipper("Turn 2 end found")
+			controller.Axes.LX.SetState(50)
+		}
+		
+		if( A_Index = 1 || A_Index = 6){
+			if (turn_two_end_found)
+			{
+				controller.Axes.LX.SetState(75)
+			}
+			sleep(2000)
+
+			if (turn_two_end_found)
+			{
+				controller.Axes.LX.SetState(65)
+			}
+			sleep(500)
 		}
 		else{
-			Turn_Left(500, 28)
+			if (turn_two_end_found)
+			{
+				Turn_Left(500, 28)
+			}
 		}
+		
 
 		; Turn 3
-		CheckTurn(turn3.startX, turn3.startY)
-		Nitrous_Off()
-		ToolTipper("Turn 3 start found")
-		controller.Axes.LX.SetState(12)
-		CheckTurn(turn3.endX, turn3.endY)
-		Nitrous_On()
-		ToolTipper("Turn 3 end found")
-		controller.Axes.LX.SetState(42)
-		sleep(500)
-		controller.Axes.LX.SetState(58)
+		if (CheckTurn(turn3.startX, turn3.startY))
+		{
+			Nitrous_Off()
+			ToolTipper("Turn 3 start found")
+			controller.Axes.LX.SetState(12)
+		}
+		
+		turn_three_end_found := false
+		turn_three_end_found := true ; debug TODO check if wheels are curved
+		if (CheckTurn(turn3.endX, turn3.endY))
+		{
+			turn_three_end_found := true
+			Nitrous_On()
+			ToolTipper("Turn 3 end found")
+			controller.Axes.LX.SetState(42)
+		}
+
+			sleep(500)
+		if (turn_three_end_found)
+		{
+			controller.Axes.LX.SetState(58)
+		}
 		sleep(2000)
-		controller.Axes.LX.SetState(62)
+
+		if (turn_three_end_found)
+		{
+			controller.Axes.LX.SetState(62)
+		}
 		sleep(2000)
+		
 		CheckTurn(lap_marker.startX, lap_marker.startY)
 		ToolTipper("Lap Complete")
 
