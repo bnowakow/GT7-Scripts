@@ -45,7 +45,7 @@ Race_PANAM()
 
 	; Retry race if time is taking more than 5.5 mins
 	; (assume something went wrong with race)
-	;SetTimer, RetryRace, 330000
+	SetTimer, RetryRace, 330000
 
 	Sleep (race_start_delay)
 	controller.Axes.LX.SetState(62)		/* before turn 1, to avoid queue of cars */
@@ -55,11 +55,11 @@ Race_PANAM()
 		; Tooltip
 		
 		turn_one_end_found := false
-		if (CheckTurn(turn1.startX, turn1.startY))
+		if (CheckTurn(turn1.startX, turn1.startY, 3100))
 		{
 			turn_one_end_found := true
 			ToolTipper("Turn 1 start found")
-		}
+		
 			/*
 			if( A_Index != 1){
 				Nitrous_Off()
@@ -67,15 +67,15 @@ Race_PANAM()
 
 			}
 			*/
-
-		controller.Axes.LX.SetState(18-3*%A_Index%)
+			controller.Axes.LX.SetState(18-3*%A_Index%)
+		}
 		;Sleep(500)
 		Accel_On(100)
 	
 		
 		turn_one_end_found := false
 		turn_one_end_found := true ; debug TODO check if wheels are curved
-		if (CheckTurn(turn1.endX, turn1.endY))
+		if (CheckTurn(turn1.endX, turn1.endY, 2300))
 		{
 			turn_one_end_found := true
 			ToolTipper("Turn 1 end found")
@@ -98,7 +98,7 @@ Race_PANAM()
 		turn_two_start_found := false
 		; Turn 2
 		if( A_Index = 1 || A_Index = 6){
-			if (CheckTurn(turn2.startX, turn2.startY, 5000))
+			if (CheckTurn(turn2.startX, turn2.startY, 3900))
 			{
 				turn_two_start_found := true
 			}
@@ -116,7 +116,7 @@ Race_PANAM()
 
 		turn_two_end_found := false
 		turn_two_end_found := true ; debug TODO check if wheels are curved
-		if (CheckTurn(turn2.endX, turn2.endY))
+		if (CheckTurn(turn2.endX, turn2.endY, 2500))
 		{
 			turn_two_end_found := true
 			ToolTipper("Turn 2 end found")

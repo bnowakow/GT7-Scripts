@@ -22,10 +22,25 @@ TurnTolerance := 10
 
 GoTo EndTurnDef
 
-CheckTurn(x,y, timeout := 3500, b_size := 2)
+CheckTurn(x,y, timeout := 3400, b_size := 2)
 {
     check_turn_start_tick_count := A_TickCount
     ;ToolTipper("A_TickCount at the begining of CheckTurn " A_TickCount, 100, 150)
+
+    ; below is only to simulate constant timeouts
+    ; debug start
+    /*
+    loop {
+        check_turn_now_tick_count := A_TickCount
+        check_turn_tick_count_from_start_to_now := check_turn_now_tick_count - check_turn_start_tick_count
+        if (check_turn_tick_count_from_start_to_now > timeout) {
+            ToolTipper("DEBUG Turn Check Timeout exceeded " A_TickCount, 100, 200)
+            return false
+        }
+        sleep(500)
+    }
+    */
+    ; debug end
     
     color_player := 0xDE6E70
     if (__enableTurn_mod__ = 0){
