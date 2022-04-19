@@ -74,7 +74,7 @@ Race_PANAM()
 	
 		
 		turn_one_end_found := false
-		turn_one_end_found := true ; debug TODO check if wheels are curved
+		; turn_one_end_found := true ; debug TODO check if wheels are curved
 		if (CheckTurn(turn1.endX, turn1.endY, 2300))
 		{
 			turn_one_end_found := true
@@ -115,7 +115,7 @@ Race_PANAM()
 		}
 
 		turn_two_end_found := false
-		turn_two_end_found := true ; debug TODO check if wheels are curved
+		; turn_two_end_found := true ; debug TODO check if wheels are curved
 		if (CheckTurn(turn2.endX, turn2.endY, 2500))
 		{
 			turn_two_end_found := true
@@ -153,7 +153,7 @@ Race_PANAM()
 		}
 		
 		turn_three_end_found := false
-		turn_three_end_found := true ; debug TODO check if wheels are curved
+		; turn_three_end_found := true ; debug TODO check if wheels are curved
 		if (CheckTurn(turn3.endX, turn3.endY))
 		{
 			turn_three_end_found := true
