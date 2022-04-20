@@ -65,11 +65,11 @@ Race_PANAM()
 		race_running1 := CheckTurnQuick(320, 110, 0x000000)
 		race_running2 := CheckTurnQuick(45, 453, 0x000000)
 		race_running3 := CheckTurnQuick(635, 455, 0x000000)
-		;Tooltip, T1s = %t1start%`nT2s = %t2start%`nT3s = %t3start%`nLap Start-End = %lap_start_end%`nRace running1 = %race_running1%`nRace running2 = %race_running2%`nRace running3 = %race_running3%, 100, 100, screen
+		; Tooltip, T1s = %t1start%`nT2s = %t2start%`nT3s = %t3start%`nLap Start-End = %lap_start_end%`nRace running1 = %race_running1%`nRace running2 = %race_running2%`nRace running3 = %race_running3%, 100, 100, screen
 
 		if t1start
 		{
-			;Tooltip, Turn 1 start, 100, 100, screen
+			Tooltip, Turn 1 start, 100, 100, screen
 			controller.Axes.LX.SetState(18-3*%A_Index%)
 			Accel_On(85)
 			Nitrous_Off()
@@ -82,12 +82,12 @@ Race_PANAM()
 			Accel_On(100)
 			Nitrous_On()
 			sleep(6000)
-			;Tooltip, complete T1 instructions, 100, 100, screen
+			Tooltip, complete T1 instructions, 100, 100, screen
 		}
 		
 		if t2start
 		{
-			;Tooltip, Turn 2 start, 100, 100, screen
+			Tooltip, Turn 2 start, 100, 100, screen
 			controller.Axes.LX.SetState(19) ;Default 19
 			sleep(1500)
 			controller.Axes.LX.SetState(26)
@@ -98,12 +98,12 @@ Race_PANAM()
 			Accel_On(100)
 			Nitrous_On()
 			sleep(2000)
-			;Tooltip, complete T2 instructions, 100, 100, screen
+			Tooltip, complete T2 instructions, 100, 100, screen
 		}
 		
 		if t3start
 		{
-			;Tooltip, Turn 3 start, 100, 100, screen
+			Tooltip, Turn 3 start, 100, 100, screen
 			Nitrous_Off()
 			controller.Axes.LX.SetState(10)
 			sleep(1200)
@@ -117,12 +117,12 @@ Race_PANAM()
 			Accel_On(100)
 			Nitrous_On()
 			sleep(3500)
-			;Tooltip, complete T3 instructions, 100, 100, screen
+			Tooltip, complete T3 instructions, 100, 100, screen
 		}
 		
 		If lap_start_end {
 			ToolTipper("Lap Complete")
-			;Tooltip, Lap start-end, 100, 100, screen
+			Tooltip, Lap start-end, 100, 100, screen
 			controller.Axes.LX.SetState(63)
 			Accel_On(100)
 			Nitrous_On()
@@ -137,7 +137,7 @@ Race_PANAM()
 	}
 
 RaceComplete:
-	;ToolTip, Out of loop 2, 100, 100, Screen
+	ToolTip, Out of loop 2, 100, 100, Screen
 	gosub, PauseLoop
 	Press_X()
 	loop 

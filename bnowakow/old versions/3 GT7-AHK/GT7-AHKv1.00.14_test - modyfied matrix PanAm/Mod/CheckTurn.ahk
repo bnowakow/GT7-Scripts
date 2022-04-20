@@ -45,7 +45,7 @@ CheckTurn(x, y, b_size := 2)
       }
     } until turn_complete = true
 
-	ToolTipper("Turn Found")
+	; ToolTipper("Turn Found")
     return turn_complete
 }
 
@@ -69,7 +69,7 @@ CheckTurnQuick(x, y, color_to_check, b_size := 2)
         }
 	}
 
-	ToolTipper("Turn Found")
+	; ToolTipper("Turn Found")
     return turn_complete
 }
 
