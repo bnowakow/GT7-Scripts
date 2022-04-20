@@ -55,7 +55,7 @@ bm_delay := 100
 box_size := 2
 
 Global ps_load_time1 := 12000
-Global ps_load_time2 := 6000
+Global ps_load_time2 := 8000
 Global ps_load_time3 := 8400
 Global SysCheck := 1
 
@@ -405,7 +405,7 @@ PSystem:
   Gui, Submit, NoHide
   if (SysCheck = 1){
     ps_load_time1 := 12000
-    ps_load_time2 := 6000
+    ps_load_time2 := 8000
     ps_load_time3 := 8400
   }
   if (SysCheck = 2){

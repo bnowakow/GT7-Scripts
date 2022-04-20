@@ -37,7 +37,7 @@ CheckTurn(x, y, b_size := 2)
       for i, c in tc
       {
         td := Distance(c, color_player)
-        ToolTipper("Turn" td)
+        ;ToolTipper("Turn" td)
         if (td < 20 ){
             turn_complete := true
             break
@@ -62,7 +62,7 @@ CheckTurnQuick(x, y, color_to_check, b_size := 2)
     for i, c in tc
     {
 		td := Distance(c, color_to_check)
-        ToolTipper("Turn" td)
+        ;ToolTipper("Turn" td)
         if (td < 20 ){
             turn_complete := true
             break
