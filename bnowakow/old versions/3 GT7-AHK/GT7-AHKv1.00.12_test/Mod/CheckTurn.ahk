@@ -29,7 +29,7 @@ CheckTurn(x,y, timeout := 3400, b_size := 2)
 
     ; below is only to simulate constant timeouts
     ; debug start
-    /*
+    ; /*
     loop {
         check_turn_now_tick_count := A_TickCount
         check_turn_tick_count_from_start_to_now := check_turn_now_tick_count - check_turn_start_tick_count
@@ -39,7 +39,7 @@ CheckTurn(x,y, timeout := 3400, b_size := 2)
         }
         sleep(500)
     }
-    */
+    ; */
     ; debug end
     
     color_player := 0xDE6E70

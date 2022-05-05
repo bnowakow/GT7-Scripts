@@ -43,7 +43,7 @@ Race_PANAM()
 
 	; Retry race if time is taking more than 5.5 mins
 	; (assume something went wrong with race)
-	;SetTimer, RetryRace, 330000
+	SetTimer, RetryRace, 330000
 	
 	;Sleep(race_start_delay)
 	;controller.Axes.LX.SetState(62)		/* before turn 1, to avoid queue of cars */
