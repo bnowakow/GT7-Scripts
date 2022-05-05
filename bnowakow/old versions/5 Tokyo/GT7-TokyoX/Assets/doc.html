@@ -1,0 +1,336 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GT7 - Tokyo X by problemz.</title>
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="scribbler-global.css">
+    <link rel="stylesheet" href="scribbler-doc.css">
+    <link rel="author" href="humans.txt">
+  </head>
+  <body>
+    <div class="doc__bg"></div>
+    <nav class="header">
+	
+		
+      <h1 class="logo">Tokyo X <span class="logo__thin">Doc</br>by problemz.</span></h1>
+	  
+      <ul class="menu">
+        <div class="menu__item toggle"><span></span></div>
+        <li class="menu__item"><a href="https://discord.gg/CfppVp7VXV" target="_blank" class="link link--dark"><i class="fa-brands fa-discord"></i> Join our Discord server</a></li>
+      </ul>
+	  </br>
+		  		<div class="position-relative marquee-container d-none d-sm-block">
+  <div class="marquee d-flex justify-content-around">
+  <span>Shoutout (alphabetic order) to all these <b>AMAZING PEOPLE</b> from the Discord Tokyo Beta Channel. Thank you for helping me bringing the <b>TOKYO X</b> script to life - it was a great time!</span> 
+	</br>
+	<span><shadow2>andow</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>Atoms4Piece</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>BeefSupreme</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>BobGT</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>CarapauCorrida</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>Chester</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>🐐 </shadow2>(you know)</span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>GTMaster</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>heidi</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>hitomi</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>j0shjones</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>JordanD123</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>Krazyy</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>NavS</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>Rossey</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>Scany</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>Septomor</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>Sevencuts</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>Solisu</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>TheScythed</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>x34uvc</shadow2></span>
+	
+  </div>
+
+</div>
+<hr>
+
+    </nav>
+	
+    <div class="wrapper">
+      <aside class="doc__nav">
+	  
+        <ul>
+          <li class="js-btn selected">Welcome to Tokyo</li>
+		  <li class="js-btn">The Masterplan</li>
+          <li class="js-btn">Setting everything up</li>
+          <li class="js-btn">FAQ/Changelog</li>
+        </ul>
+      </aside>
+	  
+      <article class="doc__content">
+        <section class="js-section">
+          <h3 class="section__title">Konnichiwa friend o/</h3>
+          <p>In this documentation you learn how the Tokyo WTC 600 race works and how to set up the <b>Tokyo X</b> AHK script to farm GT7 credits when you are away from your computer or busy doing other tasks.</br></br>Please <b><u>read carefully and double-check</u></b> everything in this documentation if something isn't working as described. The PSNProfiles Discord has many helpful members that will assist you in getting the script running for your configuration, provided you have read and followed the directions below first.</p></br>  
+		<div class="callout">
+        <a href="https://discord.gg/CfppVp7VXV" target="_blank" class="button--primary"><i class="fa-brands fa-discord"></i>&nbsp;&nbsp;Join our Discord server</a></a>
+		</div>
+        </section>
+
+		<section class="js-section">
+          <h3 class="section__title">Problemz, what is happening and why does it all work? </h3>
+		<p>Some time ago i started to look for the race with the best credits per hour ratio. <i class="fa-solid fa-arrow-trend-up"></i></br>After an update, the WTC 600 - Tokyo Race became the clear winner and i started writing the script.</p><h4>For this race we have different obstacles:</h4>
+			  <table id="obstacles">
+            <tr>
+              <th>Obstacle</th>
+              <th>Description</th>
+            </tr>
+            <tr>
+			<td>PP restriction</td>
+              <td>We are only allowed to enter a car with a maximum of 600 PP.</td>
+            </tr>
+            <tr>
+              <td>Tire/fuel consumption</td>
+              <td>Tire (9x) and fuel (3x) consumption is active. That means we must find the best way to finish the race with the least RNG possible. (Worn tires can lead to spinouts, we must not not run out of fuel, etc.)</td>
+            </tr>
+			<tr>
+              <td>Track condition</td>
+              <td>Track conditions	There are 12 laps total, and the race starts with a very wet track. The track dries throughout the race and and we must react accordingly in order to not spin out or run into obstacles that we can’t recover from (mainly barrels in the hairpin turn).</td>
+            </tr>
+			<tr>
+              <td>AI/Opponents</td>
+              <td>You start the race with 15 other opponents. We try to avoid them as much as possible in order to not spin out or miss set detection pixels (explained later).</td>
+            </tr>
+			  <tr>
+              <td>Hairpin turn</td>
+              <td>There is a hairpin in this track. And it is here to make our scripting lives horrible.</br>The inner side is blocked by big cones, hindering us from just grinding the inner part of the turn.</br>On the outer side we have small cones and 90° walls. The walls are hindering us from just grinding the outside, the small cones often resets our car (when stuck under the car), spawning us back in the first gear.</td>
+            </tr>
+          </table>
+			  <h2> Let's start explaining how we mastered this race to earn some good credits:</h2>
+		<div class="obstacles">
+        <h3 class="section__title">Overcoming the obstacles. 1 by 1.</h3>
+		</br>
+        <div class="tab__container">
+          <ul class="tab__menu">
+            <li class="tab active" data-tab="pp">PP restriction</li>
+			<li class="tab" data-tab="track">Track condition</li>
+            <li class="tab" data-tab="consumption">Tire/fuel consumptions</li>
+			<li class="tab" data-tab="ai">AI/Opponents</li>
+			<li class="tab" data-tab="hairpin">Final boss: Hairpin</li>
+          </ul>
+          <pre class="nohighlight code">
+		  <code class="tab__pane active pp">We use a bug in the code to jump below the allowed PP, but still having the fastest car (<i class="fa-solid fa-car"></i> Dodge SRT Tomahawk X VGT). </br></br>We manipulate the gear ratios to a point, where the PP calculation shows <i class="fa-solid fa-triangle-exclamation"></i> PP.</br>From there we fiddle with values until the PP calculation is under 600 PP.</br></br>This still works after the PP-Patch. <i class="fa-solid fa-square-check"></i> </code>
+		  <code class="tab__pane track"><i class="fa-solid fa-water"></i> The race starts with a very wet track. We have to start with <b>intermediates.</b></br></br>After a few laps, the track starts to get dryer, but we can't just switch to Hards. We are not driving the ideal line. <br>We hit some wet spots here and there, therefore we stay on <b>intermediates</b> for the whole race.</br></br> <i class="fa-solid fa-circle-exclamation"></i> Otherwise we would risk to RNG-Spin at many different spots, which endangers ours <b>consistency</b>.</code>
+		  <code class="tab__pane pen"><i class="fa-solid fa-clock-rotate-left"></i> I found out, that there is an internal cooldown for the penalty counter.</br></br>If you receive a penalty and hit or grind a wall/part of the track within 6 seconds, the internal cooldown gets reset.</br>You still collect penalties in a internal penalty storage.</br></br>The first time you're not hitting something for 6 seconds, the penalty gets triggered and is added to your current penalty.</br></br>I also found out, that if you keep grinding the wall while serving a penalty, your penalty storage gets reset. <i class="fa-solid fa-square-check"></i></br></br>If we just keep collecting penalties and finish the race without ever triggering/serving them, we end in a blackscreen and have to close the game and never receive credits.<b></br></br>We use all of this to our advantage:</b></br>We only trigger and serve a 5 second penalty every lap and reset our internal penalty storage, even if we are grinding walls 90% of the time, filling our internal storage.</br></code>
+		  <code class="tab__pane consumption"><b><i class="fa-regular fa-circle"></i> The tires consumption rate is at 9x.</b></br>We already know that we keep the Intermediates. We use the pit stop to always, <b>consistently</b>, trigger a new 5 second penalty</br>We're switching tires every lap - to always have the same behaviour on track, with our set timings/speeds.</br></br><i class="fa-solid fa-gas-pump"></i><b> The fuel consumtion rate is at 3x.</b></br>Because of our frequent pit visits, we can drive with the fuel map setting 1 (Power).</br>We fill up completely in Lap 6 and continiue driving until the race is finish, after lap 12.</code>
+		  <code class="tab__pane ai">We mainly use the pit stops to control our distance to the AI cars.</br>We are using set wait times, depending on our current lap and AI position at this time of the race. There are 2 timings at the momement.</br></br><i class="fa-solid fa-shield"></i> <b>Safest:</b> This one always stays behind AI, therefore its slower but we never see AI.</br></br><i class="fa-solid fa-shield-halved"></i> <b>Risky:</b> With this timings, we overtake AI on different parts of the track, but never in the hairpin turn.</code>
+		  <code class="tab__pane hairpin"><i class="fa-solid fa-radiation"></i> Welcome to the run/consisteny killer #1, the hairpin. <i class="fa-solid fa-skull-crossbones"></i></br></br>After many hours and iterations, our current most consistent way to handle the hairpin is this:</br></br>We place our car on the left wall, controlling our speed, when reaching the turn detection point. We then steer to the right, release acceleration and reach the other side's left wall. This reads so simple, but it's really much more complicated.</br></br>You will see why, pretty soon, running the script. <i class="fa-solid fa-person-harassing"></i></code>
+          </pre>
+        </div>
+		  <h4>About pixel detection:</h4>This script relies on the detection of specific color pixels at given coordinates to determine the position of the car relative to the racetrack, also some UI elements and respond accordingly. Pixel detection can be affected by a number of factors such as PlayStation version, PC performance, and network throughput, latency and stability.</br></br>
+There is also a degree of variance that happens with every race.  Although we have tried to remove as much of this as possible by pitting every lap and avoiding AI in the hairpin, there is still randomness in AI behavior or in things like how the cones in the hairpin react when hit.</br></br>
+As such, although we have included a number of variables that allow you to fine tune the script for your specific setup (hairpin turn delay/pit timings), but do not expect to see a 100% completion/win rate. A 75%-90% success is achievable for most people when the correct hairpin turn delay was found.
+
+		<hr>
+        </section>
+        <section class="js-section">
+        <h3 class="section__title">Requirements & Informations</h3>
+		<h3>Hardware:</h3>
+		<li>A computer running <i class="fa-brands fa-windows"></i> Microsoft Windows (must be X86 processor, ARM is not supported!)</li>
+		<li>Do <b>NOT</b> connect a <i class="fa-solid fa-gamepad"></i> Controller to your <i class="fa-brands fa-playstation"></i> Playstation or <i class="fa-solid fa-computer"></i> Computer</li>
+		<li><i class="fa-solid fa-network-wired"></i> Wired internet connection for stable operation of the script. If you do not have both, <i class="fa-solid fa-computer"></i> PC and <i class="fa-brands fa-playstation"></i> Playstation connected by <i class="fa-solid fa-network-wired"></i> wired internet, you may experience all kinds of different problems. If you use <i class="fa-solid fa-wifi"></i> WiFi, we cannot guarantee good operation.</li>
+		<hr>
+		<h3>Software:</h3>
+		<h4><i class="fa-solid fa-download"></i> Download and install:</h4>
+		<li><a href="https://remoteplay.dl.playstation.net/remoteplay/" target:"_blank"><i class="fa-brands fa-playstation"></i> PS Remote Play</a></br></li>
+		<li><a href="https://www.autohotkey.com/" target:"_blank"><i class="fa-regular fa-keyboard"></i> AutoHotkey</a></br></li>
+		<li><a href="https://github.com/ViGEm/ViGEmBus" target:"_blank"><i class="fa-solid fa-gamepad"></i> ViGEmBus Driver (including dependencies)</a></br></li></br>
+		<h4><i class="fa-brands fa-windows"></i> Windows Settings:</h4>
+		<li><i class="fa-brands fa-windows"></i> Windows scaling set to <b>100%</b> </li>
+		<li><i class="fa-solid fa-toggle-off"></i> HDR <b>off</b></li>
+		<li> Run <b>GT7-TokyoX.exe</b> as <i class="fa-solid fa-person-arrow-up-from-line"></i> Administrator</li>
+		<li><b>Do NOT</b> minimize <i class="fa-brands fa-playstation"></i> Remote Play. Having other windows or programs on top of it is okay, minimizing is <b>NOT</b>. </li>
+		<hr>
+		<h4><i class="fa-brands fa-playstation"></i> Playstation settings:</h4>
+		<li><b><i class="fa-solid fa-toggle-off"></i> Turn off <i class="fa-brands fa-playstation"></i> Playstation system notifications (these can cover the track map, causing issues with our detections)</br>[Example: "Your friend had come online"]</li></br>
+		<b><i class="fa-solid fa-triangle-exclamation"></i> <u>IMPORTANT FOR YOUR OWN SAFETY:</b></u></br>
+		<li><b>Turn ON</b> a password requirement for making any purchases on <i class="fa-brands fa-playstation"></i> PlayStation.</br>This way, when the script has any problems, it will not be possible to buy any MTX by accident.</li></br></br><b><i class="fa-solid fa-circle-exclamation"></i> THEREFORE, WE ARE NOT RESPONSIBLE FOR ACCIDENTAL PURCHASES IF YOU DON’T TURN THIS ON AS A PRECAUTION. <i class="fa-solid fa-circle-exclamation"></i></b>
+		<hr>
+		<h3>Ingame:</h3>
+		<li>Player must have finished all Café Menu Books and the final championship (the one with 5 races). </br> This makes sure you have the <b>Tokyo WTC600 championship unlocked. <i class="fa-solid fa-lock-open"></i></b></li>
+		<li>Player has the <i class="fa-solid fa-car"></i> Dodge SRT Tomahawk X VGT. ($1.000.000)</li>
+		<li>Player has <i class="fa-solid fa-wrench"></i> tuning parts for the <i class="fa-solid fa-car"></i> Dodge SRT Tomahawk X VGT: </br>Ballast, customisable racing transmission, fully adjustable LSD, Racing Hard tires, Intermediate tires. (~$150.000)</li>
+		<hr>
+        <h2>GT7 Settings:</h2>
+		<h3>_car build:</h3>
+		<img class="enlarge-image" src="tokyo_car1.png" alt="Tokyo Car 1" /></br><b>//car settings - 1</b>
+		</br></br>
+		<img class="enlarge-image" src="tokyo_car2.png" alt="Tokyo Car 2" /></br><b>// car settings - 2</b>
+		</br></br>
+		<img class="enlarge-image" src="tokyo_car3.png" alt="Tokyo Car 2" /></br><b>// car settings - 3</b>
+		</section>
+		<h3>_misc settings:</h3>
+		<img class="enlarge-image" src="tokyo_difficulty.png" alt="Tokyo Difficulty" /></br><b>// difficulty Setting</b>
+		</br></br>
+		<img class="enlarge-image" src="tokyo_display.png" alt="Tokyo Display" /></br><b>// display settings</b>
+		</br></br>
+		<img class="enlarge-image" src="tokyo_drivinggear.png" alt="Tokyo Driving Gear" /></br><b>// driving gear</b>
+		</br></br>
+		<h3>_after race start:</h3>
+		<h4>_-controller settings:</h4>
+		<img class="enlarge-image" src="tokyo_controller1.png" alt="Tokyo Controller 1" /></br><b>// controller - 1</b>
+		</br></br>
+		<img class="enlarge-image" src="tokyo_controller2.png" alt="Tokyo Controller 2" /></br><b>// controller - 2</b>
+		</br></br>
+		<h4>_-assists settings:</h4>
+		<img class="enlarge-image" src="tokyo_assists1.png" alt="Tokyo Assists 1" /></br><b>// assists - 1</b>
+		</br></br>
+		<img class="enlarge-image" src="tokyo_assists2.png" alt="Tokyo Assists 2" /></br><b>// assists - 2</b>
+		</br></br>
+		<h4>_-cockpit:</h4>
+		<img class="enlarge-image" src="tokyo_cockpitview.png" alt="Tokyo Cockpit" /></br><b>// cockpit - 1</b>
+		</br></br>
+		<hr>
+		<h2>Tokyo X features:</h2>
+		<h3>The script offers you following features:</h3>
+		</br>
+		<div class="tab__container">
+          <ul class="tab__menu">
+            <li class="tab active" data-tab="main">Main GUI</li>
+			<li class="tab" data-tab="race">Settings: Race</li>
+			<li class="tab" data-tab="machine">Settings: Machine/Setup</li>
+            <li class="tab" data-tab="notifications">Settings: Notification</li>
+			<li class="tab" data-tab="endafter">End after X wins</li>
+          </ul>
+          <pre class="nohighlight code">
+		  <code class="tab__pane active main">
+		<img class="enlarge-image" src="tokyo_script1.png" alt="Tokyo Script 1" /></br>You <b>start</b> after entering the WTC 600 Tokyo race, pause and hover over "Retry".</br>Tokyo WTC600 championship can be found in Asia, it is (currently) the last race option at the Tokyo Expressway track.</br><p>In the main GUI you can see your current location on the track, in which lap you are (also visualized by a progress bar) and check out your session/all time stats.</br></br></p></code>
+		  <code class="tab__pane race"><img class="enlarge-image" src="tokyo_script2.png" alt="Tokyo Script 2" /></br>Select between 2 different pit stop timings.</br></br><img class="enlarge-image" src="tokyo_script3.png" alt="Tokyo Script 3" /></br>Safe (slower): You always stay behind the AI cars after you are in first place.</br>
+		  </br></br><img class="enlarge-image" src="tokyo_script4.png" alt="Tokyo Script 4" /></br>Risky (faster): You overtake AI cars, exception: hairpin turn.</br></br><p>Select an option from the dropdown menu, the values are instantly saved and active.</br>You can check out both timings and decide whats suits you better.</p>
+		  <p align = "right">...myths says there is even a 3rd option <i class="fa-solid fa-hand-fist"></i></p></code>
+		  <code class="tab__pane machine"><img class="enlarge-image" src="tokyo_script5.png" alt="Tokyo Script 5" /></br><p><i class="fa-solid fa-u"></i> <b>Hairpin settings:</br></b></br>The <b>hairpin turn delay</b> in ms dictates how fast the script reacts and turns right after fining the pixel we defined. Start with default settings and watch how your hairpin turns look. In the first lap, the hairpin turn can be pretty wide, they will then be good/perfect for the remaining laps.</br></br>You can try out the option <b>"Dynamic Turn Delay"</b> and find your perfect setup. It measures the time between two detection points and increases/decreases the delay depending on your speed.</p></br><p><i class="fa-solid fa-eye-dropper"></i> <b>Set detection colors:</b></br></br><b>Grab: Pit stop Color</b> - here you can grab the current color when you are <b>stuck in the pit menu </b>(tire selection).</br>You can also manually enter the Hex-Color code when double-clicking on the colored rectangle.</br></br><b>Grab: Restart color</b> - here you can grab the current color when you are <b>stuck in the replay window.</b></br>You can also manually enter the Hex-Color code when double-clicking on the colored rectangle.</p></br><p><i class="fa-solid fa-video"></i> <b>Other Features:</b></br></br><b>Save clip after reset</b> - use the <i class="fa-brands fa-playstation"></i> Playstation feature to record a 3 minutes clip after a reset is triggered.</p></code>
+		  <code class="tab__pane notifications"><img class="enlarge-image" src="tokyo_script6.png" alt="Tokyo Script 6" /><p>You can send race reports to your <i class="fa-brands fa-telegram"></i> Telegram Account.</br></br>Here is a <i class="fa-solid fa-book"></i> <b>quick guide</b> how to set it up:</br></br>
+		  <ol><li>Open Telegram, and start a conversation with @BotFather</li>
+		  <li>In the conversation with @BotFather, type ‘/newbot’.</li>
+		  <li>Give your bot a nickname, like BotFather instructs you.</li>
+		  <li>Pick a username for the bot as BotFather instructs you.</li>
+		  <li>BotFather congratulates you and gives you the HTTP API token. This is what you plug into ‘Telegram Bot Token’ inside the Notifications/API settings in the script.</li>
+		  <li>Create a new group chat in Telegram, where you invite your bot and @RawDataBot</li>
+		  <li>Type ‘/start’ and the Raw Data Bot will spit out some data. Look for “chat” and specifically “id”. This is what you plug into ‘Telegram Chat ID’. Caution: the ID is not just a number, it also has a special character before the number that you <b>MUST include!</b></li></ol>
+		  </p></code>
+		  <code class="tab__pane endafter"><img class="enlarge-image" src="tokyo_script1.png" alt="Tokyo Script 1" /><p>You can set the number of wins until the script stops. Default value is 0 (infinite). </br></br>To activate this feature, enter your wanted number with the Up-Down control and HIT the button below. It is changing its text, depending on how many wins you set.</p></code>
+          </pre>
+        </div>
+		<hr>
+		<section class="js-section">
+        <h3 class="section__title">FAQ</h3>
+		<p><i class="fa-solid fa-question"></i>&nbsp;&nbsp;Can i change the pit stop timings while the script is running?</br><i class="fa-solid fa-exclamation"></i>&nbsp;&nbsp;&nbsp;Yes, you can do it and the script will pull the correct timing for the coming pit stop.</p>
+		<p><i class="fa-solid fa-question"></i>&nbsp;&nbsp;My race failed. Is something wrong?</br><i class="fa-solid fa-exclamation"></i>&nbsp;&nbsp;&nbsp;No. Failures will happen due to Randomness. Script is designed to work most of the time, but failures are inevitable.</p>
+		<p><i class="fa-solid fa-question"></i>&nbsp;&nbsp;I can't get my PP to match yours! Help?!</br><i class="fa-solid fa-exclamation"></i>&nbsp;&nbsp;&nbsp;CHECK THE TOE!!!!!</p>
+		<p><i class="fa-solid fa-question"></i>&nbsp;&nbsp;Why do I pit every lap? Wouldn't it be faster to not pit so much?</br><i class="fa-solid fa-exclamation"></i>&nbsp;&nbsp;&nbsp;Faster, yes. But slow is more reliable and the benefit doesn't outweigh the risk.</p>
+		<p><i class="fa-solid fa-question"></i>&nbsp;&nbsp;How long can I safely keep my Playstation running?</br><i class="fa-solid fa-exclamation"></i>&nbsp;&nbsp;&nbsp;That's not up to us. Your mileage may vary. Be responsible.</p>
+		<p><i class="fa-solid fa-question"></i>&nbsp;&nbsp;What do I do with all these credits?</br><i class="fa-solid fa-exclamation"></i>&nbsp;&nbsp;&nbsp;You do you, pikachu.</p>
+		<p><i class="fa-solid fa-question"></i>&nbsp;&nbsp;How long do I have before this gets fixed?</br><i class="fa-solid fa-exclamation"></i>&nbsp;&nbsp;&nbsp;Probably best to think of a patch coming immediately.</p>
+		<p><i class="fa-solid fa-question"></i>&nbsp;&nbsp;Why are you doing this?</br><i class="fa-solid fa-exclamation"></i>&nbsp;&nbsp;&nbsp;To show that we can.</p>
+		<p><i class="fa-solid fa-question"></i>&nbsp;&nbsp;Can I get a beta version of whatever you are working on next?</br><i class="fa-solid fa-exclamation"></i>&nbsp;&nbsp;&nbsp;If this lives long enough for updates to be made, they will be released as they are finished.</p>
+		<p><i class="fa-solid fa-question"></i>&nbsp;&nbsp;Do starting grids matter?</br><i class="fa-solid fa-exclamation"></i>&nbsp;&nbsp;&nbsp;No.</p>
+		<p><i class="fa-solid fa-question"></i>&nbsp;&nbsp;How fast are the laps?</br><i class="fa-solid fa-exclamation"></i>&nbsp;&nbsp;&nbsp;Anywhere between 2:00 and 3:00 depending on pit delay timings and if you happen to get stuck on something for a moment. Before you @ us... slow is reliable. Reliable is enriching.</p>
+		<p><i class="fa-solid fa-question"></i>&nbsp;&nbsp;What should I do if I can't get it to work?</br><i class="fa-solid fa-exclamation"></i>&nbsp;&nbsp;&nbsp;Clubman is great. Panam still works. Ask in the Discord, but know you have options.</p>
+        <hr>
+		<h3>Changelog</h3>
+        <div class="changelog__item">
+          <div class="changelog__meta">
+            <h4 class="changelog__title">Tokyo X</h4>
+            <small class="changelog__date"></small>
+          </div>
+          <div class="changelog__detail">
+            <ul>
+              <li>Initial public release</li>
+			Please provide as much information as possible when asking for help (last status text, lap, location - optimally with a video clip).
+            </ul>
+          </div>
+        </div>
+		</section>
+
+      </article>
+    </div>
+	</br>
+		  		<div class="position-relative marquee-container d-none d-sm-block">
+  <div class="marquee d-flex justify-content-around">
+     <span>Shoutout (alphabetic order) to all these <b>AMAZING PEOPLE</b> from the Discord Tokyo Beta Channel. Thank you for helping me bringing the <b>TOKYO X</b> script to life - it was a great time!</span>  
+	</br>
+	<span><shadow2>andow</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>Atoms4Piece</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>BeefSupreme</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>BobGT</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>CarapauCorrida</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>Chester</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>🐐 </shadow2>(you know)</span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>GTMaster</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>heidi</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>hitomi</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>j0shjones</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>JordanD123</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>Krazyy</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>NavS</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>Rossey</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>Scany</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>Septomor</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>Sevencuts</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>Solisu</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>TheScythed</shadow2></span>
+    <span><shadow>//</shadow></span>
+	<span><shadow2>x34uvc</shadow2></span>
+	
+  </div>
+
+</div>
+<hr>
+    <footer class="footer">GG! - Tokyo X by problemz
+		
+		</footer>
+	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="scribbler.js"></script>
+	
+  </body>
+</html>
