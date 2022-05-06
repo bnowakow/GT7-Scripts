@@ -36,27 +36,28 @@ race_start_delay := 0
 MenuDirect := "Right"
 Menu_loops := 6
 menu_s := 1
-Global color_check1 := 0xBBE044
-color_check2 := 0xBBE044
+Global color_check1 := 0x3A1651
+color_check2 := 0x3A1651
 color_2_delay := 400
 
 Global box_size := 2
-Global tolerance := 20
+Global tolerance := 4 ; was 20
 
 ; resolution parameters and pixel search locations
 ps_win_width := 640
 ps_win_height := 360
-Global pix1x := 458
-Global pix1y := 114
+Global pix1x := 410
+; just for reference: remote_play_offsetY := 71
+Global pix1y := 351
 Global pix2x := 607
 Global pix2y := 319
 
 bm_delay := 100
 box_size := 2
 
-Global ps_load_time1 := 12000
-Global ps_load_time2 := 8000
-Global ps_load_time3 := 8400
+Global ps_load_time1 := 14000
+Global ps_load_time2 := 10000
+Global ps_load_time3 := 10400
 Global SysCheck := 1
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -404,9 +405,9 @@ return
 PSystem:
   Gui, Submit, NoHide
   if (SysCheck = 1){
-    ps_load_time1 := 12000
-    ps_load_time2 := 8000
-    ps_load_time3 := 8400
+    ps_load_time1 := 14000
+    ps_load_time2 := 10000
+    ps_load_time3 := 10400
   }
   if (SysCheck = 2){
     ps_load_time1 := 44000

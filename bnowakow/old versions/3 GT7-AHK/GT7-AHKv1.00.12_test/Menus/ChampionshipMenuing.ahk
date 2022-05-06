@@ -43,7 +43,7 @@ ChampionshipMenu:
     CheckForOilChange := Mod(A_Index, 87)
     CheckForMaintenance := Mod(A_Index, 257)
 
-	;ToolTipper("CheckForOilChange " CheckForOilChange "`nCheckForMaintenance " CheckForMaintenance, 300, 100)
+	ToolTipper("CheckForOilChange " CheckForOilChange "`nCheckForMaintenance " CheckForMaintenance, 300, 100)
 
 	ifEqual, CheckForOilChange, 0
 	{

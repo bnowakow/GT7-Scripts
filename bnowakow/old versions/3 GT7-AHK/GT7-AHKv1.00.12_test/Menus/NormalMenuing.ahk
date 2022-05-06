@@ -22,7 +22,7 @@ NormalMenu:
 		sleep, %bm_delay%
 	}
 
-	;ToolTip, Found color 2, 100, 100, Screen
+	ToolTip, Found color 2, 100, 100, Screen
 	Sleep, 200
 	controller.Dpad.SetState("Right")
 	Sleep, 100
